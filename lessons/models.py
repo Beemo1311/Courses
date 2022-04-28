@@ -1,4 +1,3 @@
-from datetime import datetime
 from django.contrib.auth.models import User as Clients
 from django.db import models
 
@@ -20,6 +19,9 @@ class Language(models.Model):
     language = models.CharField(max_length=100)
     teach = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='teach')
     price = models.FloatField()
+
+    def __str__(self):
+        return self.language
 
 
 
